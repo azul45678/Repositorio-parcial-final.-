@@ -1,0 +1,62 @@
+LINK DE REPLIT: https://replit.com/join/faektqgocl-azul-esmeraldae
+
+#Objetivo. Algoritmo de taquilla de concierto.
+#Realiza un algoritmo para calcular el costo de los boletos a un concierto para “n” asistentes. 
+#Calcular el costo total tomando las siguientes consideraciones:
+# Costo por lugar:   Zona 1 - $ 2000,  Zona 2 - $ 1000  Zona 3 - $ 700
+# Cupones de cortesía  por persona:  Platino 500, Oro 300 y Plata 200
+ 
+#Nota 1: Estos cupones son válidos solamente de lunes a jueves.
+  
+#El algoritmo  debe pedir como entrada: el nombre del cliente,  la zona, el día de la semana, y el tipo de cupón de cada asistente (si es que tiene cupón).
+#Nota 2. El ciclo se finalizará si ya no hay clientes que atender, por tanto, pregunta si hay un cliente más en la fila. 
+#La salida debe tener:
+#El nombre del asistente y el costo total
+#  El algoritmo también debe de acumular la venta total de los “n” boletos  y reportar el resultado al final.
+
+ventas_totales = 0
+while True:
+    nombre = input("Ingresa el nombre del cliente:  ")
+    print("Costo por lugar Zona 1 - $ 2000,  Zona 2 - $ 1000  Zona 3 - $ 700")
+    zona = int(input("Ingresa la zona:  "))
+    print("Los cupones solo son válidos solamente de lunes a jueves")
+    dia = input("Ingresa el día de la semana:  ")
+    print("Cupones de cortesía  por persona:  Platino 500, Oro 300 y Plata 200")
+    cupon = input("Ingresa el tipo de cupón: ")
+
+    if zona == 1:
+        costo =  2000
+    elif zona == 2:
+        costo = 1000
+    elif zona == 3:
+      costo = 700
+    else:
+        print("Esta zona no es válida, intenta de nuevo :)")
+
+  #CUPONES 
+   
+
+    if cupon.lower() == 'platino':
+        cupon = 500
+    elif cupon.lower() == 'oro':
+        cupon = 300
+    elif cupon.lower() == 'plata':
+        cupon = 200
+    else:
+        print("Este cupón no es válido, intenta de nuevo :)")
+     
+    
+
+    costo_boletott = costo - cupon 
+    print(f"El costo total del boleto es de : {costo_boletott}")
+    ventas_totales += costo_boletott
+    print(f"Las ventas totales son de: {ventas_totales}")
+    print(f" El nombre del cliente es {nombre}")
+    print("Gracias por tu compra,{}".format(nombre))
+  
+    #PREGUNTAR SI HAY OTRO CLIENTE
+    respuesta_cliente = input("Hay algún otro cliente? (si/no):  ")
+    if respuesta_cliente.lower() == 'no':
+      break
+
+print(f"Las ventas totales son de {ventas_totales}")
